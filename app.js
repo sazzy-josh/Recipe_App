@@ -52,10 +52,10 @@ async function fetchAPI(){
                     
                     <div id="content">
                         <div>
-                        <h3>Recipe:${items.recipe.label}</h3>
+                        <h3>Recipe: ${items.recipe.label}</h3>
                         <p>Calories: ${Math.floor(items.recipe.calories)}</p>
-                        <p>Diet:${items.recipe.dietLabels.length > 0 ?items.recipe.dietLabels:"No Data Available"}</p>
-                        <p>Health Label:${items.recipe.healthLabels.slice(0,6)}</p>
+                        <p>Diet: ${items.recipe.dietLabels.length > 0 ?items.recipe.dietLabels:"No Data Available"}</p>
+                        <p>Health Label: ${items.recipe.healthLabels.slice(0,6)}</p>
                         </div>
                         
 
@@ -66,6 +66,7 @@ async function fetchAPI(){
         
                     </div>
                 </div>
+                
         `
         searchResult.innerHTML = result;
     })
