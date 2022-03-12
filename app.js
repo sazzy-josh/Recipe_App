@@ -22,14 +22,14 @@ form.addEventListener('keyup',(e) =>{
         clearTime = setTimeout(() => { 
         let value = form.querySelector("input").value;
         fetchAPI(value)
-       },1500);
+       },1000);
   
 })
 
-searchBtn.addEventListener('click',(e) => {
-     
-   
-     console.log(query)
+form.addEventListener('submit',(e) => {
+    e.preventDefault()
+     let query = form.firstElementChild.value;
+
      fetchAPI()
      searchInput.value = ""
 })
@@ -37,7 +37,6 @@ searchBtn.addEventListener('click',(e) => {
 
 async function fetchAPI(){
     let value = form.querySelector("input").value;
-    let query = searchInput.value
     let result = ''
     let url = `https://api.edamam.com/search?q=${value||query}&app_id=${app_id}&app_key=${app_key}&to=20`;
     const response = await fetch(url);
@@ -46,14 +45,14 @@ async function fetchAPI(){
       return data.hits.map(items => {
         result += 
         `
-        <div class="card">
+        <div class="card" data-aos="fade-left">
                     <div id="image">
                         <img src="${items.recipe.image}" alt="">
                     </div>
                     
                     <div id="content">
                         <div>
-                        <h3>Recipe Name:${items.recipe.label}</h3>
+                        <h3>Recipe:${items.recipe.label}</h3>
                         <p>Calories: ${Math.floor(items.recipe.calories)}</p>
                         <p>Diet:${items.recipe.dietLabels > 0 ?items.recipe.dietLabels:"No Data Available"}</p>
                         <p>Health Label:${items.recipe.healthLabels.slice(0,6)}</p>
@@ -70,12 +69,6 @@ async function fetchAPI(){
         `
         searchResult.innerHTML = result;
     })
-   
-    
-   
-        
-    
-    
 
 }
 
