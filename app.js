@@ -45,7 +45,7 @@ async function fetchAPI(){
       return data.hits.map(items => {
         result += 
         `
-        <div class="card" data-aos="fade-left">
+        <div class="card" data-aos="flip-left">
                     <div id="image">
                         <img src="${items.recipe.image}" alt="">
                         <div id="link">
