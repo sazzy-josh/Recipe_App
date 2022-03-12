@@ -38,7 +38,7 @@ form.addEventListener('submit',(e) => {
 async function fetchAPI(){
     let value = form.querySelector("input").value;
     let result = ''
-    let url = `https://api.edamam.com/search?q=${value||query}&app_id=${app_id}&app_key=${app_key}&to=20`;
+    let url = `https://api.edamam.com/search?q=${value||query}&app_id=${app_id}&app_key=${app_key}&to=30`;
     const response = await fetch(url);
     const data = await response.json()
     console.log(data)
