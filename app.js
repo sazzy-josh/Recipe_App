@@ -48,25 +48,26 @@ async function fetchAPI(){
         <div class="card" data-aos="fade-left">
                     <div id="image">
                         <img src="${items.recipe.image}" alt="">
-                    </div>
-                    
-                    <div id="content">
-                        <div>
-                        <h3>Recipe: ${items.recipe.label}</h3>
-                        <p>Calories: ${Math.floor(items.recipe.calories)}</p>
-                        <p>Diet: ${items.recipe.dietLabels.length > 0 ?items.recipe.dietLabels:"No Data Available"}</p>
-                        <p>Health Label: ${items.recipe.healthLabels.slice(0,6)}</p>
-                        </div>
-                        
-
                         <div id="link">
                             <a href="${items.recipe.url}" target="_blank">View More</a>
                         </div>
+                    </div>
+                    
+                    <div id="content">
+                        <div id="div">
+                        <h3><strong>Recipe</strong>: ${items.recipe.label}</h3>
+                        <p><strong> Calories</strong>:<img id="cal" src="./calorie.png">${items.recipe.calories.toFixed(2)}</p>
+                        <p><strong>Diet</strong>: ${items.recipe.dietLabels.length > 0 ?items.recipe.dietLabels:"No Data Available"}</p>
+                        <p><strong>Health Label</strong>: ${items.recipe.healthLabels.slice(0,6)}</p>
+                        </div>
+                        
+
+                        
                        
         
                     </div>
                 </div>
-                
+
         `
         searchResult.innerHTML = result;
     })
