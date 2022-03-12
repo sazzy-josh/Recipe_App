@@ -5,7 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: black;
+    background-color: rgb(29, 9, 9);
 }
 
  #container{
@@ -193,7 +193,7 @@ a{
     padding:5px;
     border-radius: 5px;
     background-color: rgb(230, 224, 224);
-    box-shadow: rgba(90, 100, 134, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    box-shadow: rgba(123, 129, 148, 0.27) 0px 0px 0.25em, rgba(22, 44, 85, 0.05) 0px 0.25em 1em;
     overflow: hidden;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
