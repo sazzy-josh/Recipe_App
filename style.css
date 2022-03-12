@@ -24,7 +24,7 @@
      width:100%;
      position: relative;
      top: 10%;
-     color: white;
+     color: rgb(233, 230, 200);
 }  
 #div p:last-of-type{
     line-height: 1.3;
